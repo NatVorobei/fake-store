@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+Тестове завдання  на позицію  React Frontend Developer 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Задача: розробити застосунок для роботи з даними (продуктами). Необхідно вивести два списки: продукти, отримані через API, і продукти, додані через форму. Створити сторінки для відображення продукту, його створення та редагування.
+Для вирішення завдання необхідно використовувати Redux. Для запитів до API використовувати будь-який сервіс. Наприклад: https://fakestoreapi.com/ (Документація – посилання).
+Можна використовувати UI-бібліотеки та бібліотеки для роботи з формами.
+Оцінюватиметься підхід до завдання, якість і структура коду, увага до деталей.
+Викласти на GitHub. Вказати, скільки часу приблизно зайняло виконання завдання.
+API URL – https://fakestoreapi.com/products
+Застосунок повинен мати невеликий layout з мінімальним хедером, контентом і навігацією.
 
-## Available Scripts
+Завдання 1. Вивести список продуктів
+    На сторінці /products у окремій вкладці вивести список продуктів.
+    На сторінці /products вивести список карток продуктів по декілька в ряд. Повинні відображатися зображення, назва та ціна продукту. Реалізувати API-запит. При початковому завантаженні вивести 8 продуктів. Додати три кнопки для завантаження різної кількості товарів:
+    кнопка – 8 продуктів
+    кнопка – 16 продуктів
+    кнопка – всі продукти (або 20 штук)
+    Зробити переходи на сторінку продукту.
+Завдання 2. Сторінка продукту
+    На сторінці /products/
+    вивести детальнішу інформацію про продукт.
+    Завдання 3. Створення продукту
+    На окремій сторінці реалізувати створення продукту.
+    Створити форму з полями: назва, ціна, опис, опубліковано (чекбокс/світчер). Поля повинні бути обов’язковими та з мінімальною валідацією. Зберегти дату створення. Використати API-запит. Після успішної відправки форми, зберегти дані (введені поля у формі) для відображення у списку.
+Завдання 4. Список створених продуктів
+    На сторінці /products вивести таблицю створених продуктів в окремій вкладці. Важливо забезпечити можливість перемикання між списками.
+    Вивести таблицю продуктів з усіма полями. На цій вкладці додати перемикач (світчер), який буде фільтрувати продукти на опубліковані та неопубліковані. Бонус: зробити перемикач опублікованості на одному рівні з вкладками списків. Список зберігається при перезавантаженні сторінки. Додати перехід на екран редагування продукту.
+Завдання 5. Редагування продукту
+    На окремій сторінці реалізувати редагування продукту.
+    Використати API-запит. Оновити список продуктів.
+Завдання 6. Видалення продукту
+    На екрані редагування продукту та у списку створених продуктів реалізувати видалення продукту.
+    Необхідно використовувати API-запит для емуляції видалення. Видалення на екрані редагування. Видалення у таблиці створених продуктів. Підтвердження видалення.
+Бонуси
+    Якщо API-сервіс підтримує такі можливості:
+    Реалізувати сортування та пагінацію списків.
+    Реалізувати фільтрацію.
+    Реалізувати пошук (без кнопки відправлення).
+    Реалізувати мінімальну авторизацію, яка надає доступ до сторінок.
+    Термін виконання: 2 дні
+    Необхідно завантажити на свій сервер, а також на GitHub для перегляду якості коду.
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
