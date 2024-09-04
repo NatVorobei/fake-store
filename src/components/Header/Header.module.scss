@@ -1,0 +1,39 @@
+.header {
+    min-width: 360px;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0px 0px 5px #292c32;
+
+    &__container {
+        max-width: 1470px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 auto;
+        padding: 10px 15px;
+    }
+
+    &__logo {
+        width: 60px;
+        height: 60px;
+        &_img {
+            width: 100%;
+            border-radius: 50%;
+        }
+    }
+
+    &__links {
+        display: flex;
+        column-gap: 20px;
+    }
+
+    &__link {
+        font-weight: 700;
+        color: #54525e;
+        text-decoration: none;
+
+        &:hover {
+            color: #73717c;
+        }
+    }
+}
