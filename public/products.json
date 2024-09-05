@@ -1,0 +1,322 @@
+[
+    {
+        "id": 1,
+        "title": "Gachi Muchi Essence",
+        "price": "57",
+        "description": "Get ready to surrender to the olfactory dominatrix that is this fragrance. Opening with a commanding burst of leather, Gachi Muchi Essence asserts its dominance from the very first spray. The leather notes are not for the faint-hearted; they're bold, unapologetic, and demand your attention. You'll find yourself willingly bound to their aromatic allure.",
+        "author": "@Ripper",
+        "authorIcon" : "./images/authorIcons/@Ripper.jpg",
+        "category": "For men",
+        "imageUrl": [
+            "./images/reviews/initio.jpg",
+            "./images/reviews/axe.jpg",
+            "./images/reviews/rubber-mask.jpg",
+            "./images/reviews/huda-beauty.jpeg",
+            "./images/reviews/westin-hotel-shampoo.jpg"
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Fisting&Shower Gel",
+        "price": "57",
+        "description": "From the moment the gel caresses your skin, you're greeted by an intoxicating burst of leather, a fragrance so bold it's almost sinful. It's as if the essence of a leather-clad dungeon has been bottled for your bathing pleasure. The shower becomes a sanctuary, and each drop becomes an invitation to submit to the indulgence of cleanliness.",
+        "author": "@BillyHerrington",
+        "authorIcon" : "./images/authorIcons/@BillyHarington.jpg",
+        "category": "Body care",
+        "imageUrl": [
+            "./images/reviews/axe.jpg",
+            "./images/reviews/initio.jpg",
+            "./images/reviews/rubber-mask.jpg",
+            "./images/reviews/huda-beauty.jpeg",
+            "./images/reviews/westin-hotel-shampoo.jpg"
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Dark Fantasies",
+        "price": "57",
+        "description": "The heart of Dark Fantasies reveals a floral bouquet, a surprising twist that softens the edges of the leather, much like the gentle touch of a skilled dominatrix. The florals dance sensually with the leather, creating a harmonious balance that elevates the fragrance into a realm of sophisticated seduction.",
+        "author": "@VanDarkholme",
+        "authorIcon" : "./images/authorIcons/@VanDarkholme.jpg",
+        "category": "Parfume",
+        "imageUrl": [
+            "./images/reviews/rubber-mask.jpg",
+            "./images/reviews/initio.jpg",
+            "./images/reviews/axe.jpg",
+            "./images/reviews/huda-beauty.jpeg",
+            "./images/reviews/westin-hotel-shampoo.jpg"
+        ]
+    },
+    {
+        "id": 4,
+        "title": "Gillette",
+        "price": "57",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "author": "@Bogdan",
+        "authorIcon" : "./images/authorIcons/@Bogdan.jpeg",
+        "category": "For men",
+        "imageUrl": [
+            "./images/reviews/huda-beauty.jpeg",
+            "./images/reviews/initio.jpg",
+            "./images/reviews/axe.jpg",
+            "./images/reviews/rubber-mask.jpg",
+            "./images/reviews/westin-hotel-shampoo.jpg"
+        ]
+    },
+    {
+        "id": 5,
+        "title": "Cat Shampoo",
+        "price": "57",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "author": "@Huh",
+        "authorIcon" : "./images/authorIcons/@Huh.jpg",
+        "category": "For men",
+        "imageUrl": [
+            "./images/reviews/westin-hotel-shampoo.jpg",
+            "./images/reviews/initio.jpg",
+            "./images/reviews/axe.jpg",
+            "./images/reviews/rubber-mask.jpg",
+            "./images/reviews/huda-beauty.jpeg"
+        ]
+    },
+    {
+        "id": 6,
+        "title": "Lipstick",
+        "price": "57",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "author": "@Sashko",
+        "authorIcon" : "./images/authorIcons/@Sashko.jpg",
+        "category": "Make up",
+        "imageUrl": [
+            "./images/reviews/initio.jpg",
+            "./images/reviews/axe.jpg",
+            "./images/reviews/rubber-mask.jpg",
+            "./images/reviews/huda-beauty.jpeg",
+            "./images/reviews/westin-hotel-shampoo.jpg"
+        ]
+    },
+    {
+        "id": 7,
+        "title": "Chocolate Balm",
+        "price": "57",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "author": "@Chocolato",
+        "authorIcon" : "./images/authorIcons/@Chocolato.jpg",
+        "category": "Body Care",
+        "imageUrl": [
+            "./images/reviews/huda-beauty.jpeg",
+            "./images/reviews/rubber-mask.jpg",
+            "./images/reviews/initio.jpg",
+            "./images/reviews/axe.jpg",
+            "./images/reviews/westin-hotel-shampoo.jpg"
+        ]
+    },
+    {
+        "id": 8,
+        "title": "Shimmer",
+        "price": "57",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "author": "@Celebrity",
+        "authorIcon" : "./images/authorIcons/@Celebrity.jpg",
+        "category": "For men",
+        "imageUrl": [
+            "./images/reviews/axe.jpg",
+            "./images/reviews/huda-beauty.jpeg",
+            "./images/reviews/initio.jpg",
+            "./images/reviews/rubber-mask.jpg",
+            "./images/reviews/westin-hotel-shampoo.jpg"
+        ]
+    },
+    {
+        "id": 9,
+        "title": "Gipsy Alchohol",
+        "price": "57",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "author": "@Bratan",
+        "authorIcon" : "./images/authorIcons/@Bratan.jpg",
+        "category": "Parfume",
+        "imageUrl": [
+            "./images/reviews/westin-hotel-shampoo.jpg",
+            "./images/reviews/initio.jpg",
+            "./images/reviews/axe.jpg",
+            "./images/reviews/rubber-mask.jpg",
+            "./images/reviews/huda-beauty.jpeg"
+        ]
+    },
+    {
+        "id": 10,
+        "title": "Dungeon Oil",
+        "price": "57",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "author": "@RicardoMilos",
+        "authorIcon" : "./images/authorIcons/@RicardoMilos.jpg",
+        "category": "Body Care",
+        "imageUrl": [
+            "./images/reviews/axe.jpg",
+            "./images/reviews/initio.jpg",
+            "./images/reviews/rubber-mask.jpg",
+            "./images/reviews/huda-beauty.jpeg",
+            "./images/reviews/westin-hotel-shampoo.jpg"
+        ]
+    },
+    {
+        "id": 11,
+        "title": "Gachi Muchi Essence",
+        "price": "57",
+        "description": "Get ready to surrender to the olfactory dominatrix that is this fragrance. Opening with a commanding burst of leather, Gachi Muchi Essence asserts its dominance from the very first spray. The leather notes are not for the faint-hearted; they're bold, unapologetic, and demand your attention. You'll find yourself willingly bound to their aromatic allure.",
+        "author": "@Ripper",
+        "authorIcon" : "./images/authorIcons/@Ripper.jpg",
+        "category": "For men",
+        "imageUrl": [
+            "./images/reviews/initio.jpg",
+            "./images/reviews/axe.jpg",
+            "./images/reviews/rubber-mask.jpg",
+            "./images/reviews/huda-beauty.jpeg",
+            "./images/reviews/westin-hotel-shampoo.jpg"
+        ]
+    },
+    {
+        "id": 12,
+        "title": "Fisting&Shower Gel",
+        "price": "57",
+        "description": "From the moment the gel caresses your skin, you're greeted by an intoxicating burst of leather, a fragrance so bold it's almost sinful. It's as if the essence of a leather-clad dungeon has been bottled for your bathing pleasure. The shower becomes a sanctuary, and each drop becomes an invitation to submit to the indulgence of cleanliness.",
+        "author": "@BillyHerrington",
+        "authorIcon" : "./images/authorIcons/@BillyHarington.jpg",
+        "category": "Body care",
+        "imageUrl": [
+            "./images/reviews/axe.jpg",
+            "./images/reviews/initio.jpg",
+            "./images/reviews/rubber-mask.jpg",
+            "./images/reviews/huda-beauty.jpeg",
+            "./images/reviews/westin-hotel-shampoo.jpg"
+        ]
+    },
+    {
+        "id": 13,
+        "title": "Dark Fantasies",
+        "price": "57",
+        "description": "The heart of Dark Fantasies reveals a floral bouquet, a surprising twist that softens the edges of the leather, much like the gentle touch of a skilled dominatrix. The florals dance sensually with the leather, creating a harmonious balance that elevates the fragrance into a realm of sophisticated seduction.",
+        "author": "@VanDarkholme",
+        "authorIcon" : "./images/authorIcons/@VanDarkholme.jpg",
+        "category": "Parfume",
+        "imageUrl": [
+            "./images/reviews/rubber-mask.jpg",
+            "./images/reviews/initio.jpg",
+            "./images/reviews/axe.jpg",
+            "./images/reviews/huda-beauty.jpeg",
+            "./images/reviews/westin-hotel-shampoo.jpg"
+        ]
+    },
+    {
+        "id": 14,
+        "title": "Gillette",
+        "price": "57",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "author": "@Bogdan",
+        "authorIcon" : "./images/authorIcons/@Bogdan.jpeg",
+        "category": "For men",
+        "imageUrl": [
+            "./images/reviews/huda-beauty.jpeg",
+            "./images/reviews/initio.jpg",
+            "./images/reviews/axe.jpg",
+            "./images/reviews/rubber-mask.jpg",
+            "./images/reviews/westin-hotel-shampoo.jpg"
+        ]
+    },
+    {
+        "id": 15,
+        "title": "Cat Shampoo",
+        "price": "57",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "author": "@Huh",
+        "authorIcon" : "./images/authorIcons/@Huh.jpg",
+        "category": "For men",
+        "imageUrl": [
+            "./images/reviews/westin-hotel-shampoo.jpg",
+            "./images/reviews/initio.jpg",
+            "./images/reviews/axe.jpg",
+            "./images/reviews/rubber-mask.jpg",
+            "./images/reviews/huda-beauty.jpeg"
+        ]
+    },
+    {
+        "id": 16,
+        "title": "Lipstick",
+        "price": "57",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "author": "@Sashko",
+        "authorIcon" : "./images/authorIcons/@Sashko.jpg",
+        "category": "Make up",
+        "imageUrl": [
+            "./images/reviews/initio.jpg",
+            "./images/reviews/axe.jpg",
+            "./images/reviews/rubber-mask.jpg",
+            "./images/reviews/huda-beauty.jpeg",
+            "./images/reviews/westin-hotel-shampoo.jpg"
+        ]
+    },
+    {
+        "id": 17,
+        "title": "Chocolate Balm",
+        "price": "57",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "author": "@Chocolato",
+        "authorIcon" : "./images/authorIcons/@Chocolato.jpg",
+        "category": "Body Care",
+        "imageUrl": [
+            "./images/reviews/huda-beauty.jpeg",
+            "./images/reviews/rubber-mask.jpg",
+            "./images/reviews/initio.jpg",
+            "./images/reviews/axe.jpg",
+            "./images/reviews/westin-hotel-shampoo.jpg"
+        ]
+    },
+    {
+        "id": 18,
+        "title": "Shimmer",
+        "price": "57",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "author": "@Celebrity",
+        "authorIcon" : "./images/authorIcons/@Celebrity.jpg",
+        "category": "For men",
+        "imageUrl": [
+            "./images/reviews/axe.jpg",
+            "./images/reviews/huda-beauty.jpeg",
+            "./images/reviews/initio.jpg",
+            "./images/reviews/rubber-mask.jpg",
+            "./images/reviews/westin-hotel-shampoo.jpg"
+        ]
+    },
+    {
+        "id": 19,
+        "title": "Gipsy Alchohol",
+        "price": "57",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "author": "@Bratan",
+        "authorIcon" : "./images/authorIcons/@Bratan.jpg",
+        "category": "Parfume",
+        "imageUrl": [
+            "./images/reviews/westin-hotel-shampoo.jpg",
+            "./images/reviews/initio.jpg",
+            "./images/reviews/axe.jpg",
+            "./images/reviews/rubber-mask.jpg",
+            "./images/reviews/huda-beauty.jpeg"
+        ]
+    },
+    {
+        "id": 20,
+        "title": "Dungeon Oil",
+        "price": "57",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "author": "@RicardoMilos",
+        "authorIcon" : "./images/authorIcons/@RicardoMilos.jpg",
+        "category": "Body Care",
+        "imageUrl": [
+            "./images/reviews/axe.jpg",
+            "./images/reviews/initio.jpg",
+            "./images/reviews/rubber-mask.jpg",
+            "./images/reviews/huda-beauty.jpeg",
+            "./images/reviews/westin-hotel-shampoo.jpg"
+        ]
+    }
+]

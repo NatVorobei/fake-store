@@ -11,7 +11,12 @@ export function productsReducer(state = initialState, action) {
                 ...state,
                 products: action.payload,
             };
-            default:
-                return state;
+        case productsTypes.ADD_PRODUCT:
+            return {
+                ...state,
+                products: [...state.products, action.payload],
+            };
+        default:
+            return state;
     }
 }

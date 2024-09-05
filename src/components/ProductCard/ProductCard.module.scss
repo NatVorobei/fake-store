@@ -1,0 +1,42 @@
+.productCard {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+    row-gap: 5px;
+    border: 1px solid gainsboro;
+    text-decoration: none;
+    padding: 10px;
+    height: 190px;
+    &:hover {
+        scale: 1.1;
+        transition: all 0.2s ease-out;
+    }
+
+    &__link {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 10px;
+        text-decoration: none;
+    }
+
+    &__title {
+        font-size: 14px;
+        text-align: center;
+        color:  #292c32;
+    }
+
+    &__img {
+        width: 100px;
+        height: 100px;
+        object-fit: contain;
+    }
+
+    &__title, &__price {
+        margin: 0;
+        text-align: center;
+    }
+}
