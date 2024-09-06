@@ -16,6 +16,11 @@ export function productsReducer(state = initialState, action) {
                 ...state,
                 products: [...state.products, action.payload],
             };
+        case productsTypes.DELETE_PRODUCT:
+            return {
+                ...state,
+                products: state.products.filter(product => product.id !== action.payload)
+            };
         default:
             return state;
     }

@@ -12,7 +12,7 @@ export default function Header(){
                     <div className={styles.header__links}>
                         <Link to={'/products'} className={styles.header__link}>Products</Link>
                         <Link to={'/add-product'} className={styles.header__link}>Add Product+</Link>
-                        <Link className={styles.header__link}>Edit Products</Link>
+                        <Link to={'/edit'} className={styles.header__link}>Edit Products</Link>
                     </div>
                 </div>
             </div>

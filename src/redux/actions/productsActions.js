@@ -1,4 +1,3 @@
-// import { baseUrl } from "../../utils/vars";
 import { productsTypes } from "../types/productsTypes";
 
 export function getProducts(products){
@@ -15,50 +14,61 @@ export function addProduct(product){
     }
 }
 
-export function getProductsAsync(count){
-    return async function(dispatch) {
-        const result = await fetch('./products.json');
-        // const result = await fetch(`${baseUrl}products`);
-        const data = await result.json();
-        const limitedData = data.slice(0, count);
-
-        dispatch(getProducts(limitedData));
-    }
+export function deleteProduct(product) {
+    return {
+        type: productsTypes.DELETE_PRODUCT,
+        payload: product
+    };
 }
 
-// export function addProductAsync(product) {
-//     return async function(dispatch) {
-//         try {
-//             const response = await fetch('./products.json', {
-//                 method: 'POST',
-//                 headers: {
-//                     'Content-Type': 'application/json',
-//                 },
-//                 body: JSON.stringify(product),
-//             });
-
-//             if (response.ok) {
-//                 const newProduct = await response.json();
-//                 dispatch({
-//                     type: productsTypes.ADD_PRODUCT,
-//                     payload: newProduct
-//                 });
-//             } else {
-//                 throw new Error('Failed to add product');
-//             }
-//         } catch (error) {
-//             console.error(error);
-//         }
-//     };
-// }
+export function getProductsAsync(){
+    return async function(dispatch) {
+        // const result = await fetch('./products.json');
+        try {
+        // const result = await fetch(`https://api.escuelajs.co/api/v1/products/`);
+        const result = await fetch(`https://jsonplaceholder.typicode.com/posts`);
+        const data = await result.json();
+        dispatch(getProducts(data));
+        } catch (error) {
+            console.error('Failed to fetch', error);
+        }
+    }
+}
 
 export function addProductAsync(product) {
     return async function(dispatch) {
         try {
-            console.log('Adding product:', product);
+            fetch('https://jsonplaceholder.typicode.com/posts', {
+                method: 'POST',
+                body: JSON.stringify({
+                  title: 'foo',
+                  body: 'bar',
+                  userId: 1,
+                }),
+                headers: {
+                  'Content-type': 'application/json; charset=UTF-8',
+                },
+              })
+                .then((response) => response.json())
+                .then((json) => console.log(json));
+            
             dispatch(addProduct(product));
         } catch (error) {
             console.error('Error adding product:', error);
         }
     };
 }
+
+export function deleteProductAsync(product){
+    return async function (dispatch) {
+        try {
+        fetch('https://jsonplaceholder.typicode.com/posts/1', {
+            method: 'DELETE',
+        });
+        dispatch(deleteProduct(product))
+        } catch (error) {
+            console.error('Error deleting product:', error);
+        }
+    }
+}
+

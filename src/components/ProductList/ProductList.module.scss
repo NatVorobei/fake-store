@@ -29,3 +29,15 @@
     }
 }
 
+.productEdit {
+    max-width: 1024px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;   
+    gap: 20px;
+    margin-bottom: 40px;
+
+    &__container {
+        width: 100%;
+    }
+}

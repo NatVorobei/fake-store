@@ -9,22 +9,22 @@ export default function CreateProductForm() {
     return(
         <Formik
             initialValues={{
-            title: '',
-            price: 0,
-            description: '',
-        }}
-        validationSchema={validationSchemaProduct}
-        onSubmit={(values) => {
-            const newProduct = {
-                ...values,
-                price: parseFloat(values.price),
-                id: Date.now(),
-            };
-
-            dispatch(addProductAsync(newProduct));
-        }}>
-        {({ isSubmitting }) => (
-                <Form className={styles.form}>
+                title: '',
+                body: '',
+                userId: 1,
+            }}
+            // validationSchema={validationSchemaProduct}
+            onSubmit={(values, { resetForm }) => {
+                const newProduct = {
+                    title: values.title,
+                    body: values.description,
+                    userId: values.userId,
+                };
+                dispatch(addProductAsync(newProduct));
+                resetForm();
+            }}>
+            {({ isSubmitting }) => (
+                    <Form className={styles.form}>
                     <div className={styles.formGroup}>
                         <label htmlFor="title">Title:</label>
                         <Field
@@ -35,34 +35,31 @@ export default function CreateProductForm() {
                         />
                         <ErrorMessage name="title" component="div" className={styles.error} />
                     </div>
-
                     <div className={styles.formGroup}>
-                        <label htmlFor="price">Price:</label>
+                        <label htmlFor="userId">UserId:</label>
                         <Field
-                            id="price"
-                            name="price"
-                            type="number"
+                            id="userId"
+                            name="userId"
+                            type="text"
                             className={styles.input}
                         />
-                        <ErrorMessage name="price" component="div" className={styles.error} />
+                        <ErrorMessage name="userId" component="div" className={styles.error} />
                     </div>
-
                     <div className={styles.formGroup}>
-                        <label htmlFor="description">Description:</label>
+                        <label htmlFor="body">Description:</label>
                         <Field
-                            id="description"
-                            name="description"
+                            id="body"
+                            name="body"
                             as="textarea"
                             className={styles.textarea}
                         />
-                        <ErrorMessage name="description" component="div" className={styles.error} />
+                        <ErrorMessage name="body" component="div" className={styles.error} />
                     </div>
-
                     <button type="submit" className={styles.submitButton} disabled={isSubmitting}>
                         {isSubmitting ? 'Submitting...' : 'Create Product'}
                     </button>
                 </Form>
-            )}
+                )}
         </Formik>
     )
 }
