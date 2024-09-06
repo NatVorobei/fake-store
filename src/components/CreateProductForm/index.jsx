@@ -4,7 +4,7 @@ import { addProductAsync } from "../../redux/actions/productsActions";
 import styles from './CreateProductForm.module.scss';
 import { validationSchemaProduct } from "../../validation";
 
-export default function CreateProductForm() {
+export default function CreateProductForm({onFormSubmit}) {
     const dispatch = useDispatch();
     return(
         <Formik
@@ -13,7 +13,7 @@ export default function CreateProductForm() {
                 body: '',
                 userId: 1,
             }}
-            // validationSchema={validationSchemaProduct}
+            validationSchema={validationSchemaProduct}
             onSubmit={(values, { resetForm }) => {
                 const newProduct = {
                     title: values.title,
@@ -22,6 +22,9 @@ export default function CreateProductForm() {
                 };
                 dispatch(addProductAsync(newProduct));
                 resetForm();
+                if (onFormSubmit) {
+                    onFormSubmit();
+                }
             }}>
             {({ isSubmitting }) => (
                     <Form className={styles.form}>

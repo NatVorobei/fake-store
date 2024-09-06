@@ -1,0 +1,24 @@
+.editProduct {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+
+    &__btn {
+        border: 1px solid transparent;
+        border-radius: 3px;
+        padding: 10px 15px;
+        color: white;
+        background-color: #292c32;
+        font-size: 14px;
+        cursor: pointer;
+        margin-bottom: 20px;
+        align-self: end;
+        margin-right: 20px;
+
+        &:hover {
+        background-color: white;
+        border: 1px solid #292c32;
+        color: #292c32;
+    }
+    }
+}

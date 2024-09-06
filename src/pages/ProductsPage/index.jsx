@@ -11,8 +11,10 @@ export default function ProductsPage(){
     const [productLimit, setProductLimit] = useState(8);
     
     useEffect(() => {
-        dispatch(getProductsAsync());
-    }, [dispatch]);
+        if(!products.length){
+            dispatch(getProductsAsync());
+        }
+    }, [dispatch, products]);
 
     useEffect(() => {
         if (products.length) {
@@ -20,18 +22,27 @@ export default function ProductsPage(){
         }
     }, [products, productLimit]);
 
+    useEffect(() => {
+        if (products.length) {
+            if (productLimit === 'all') {
+                setDisplayedProducts(products);
+            } else {
+                setDisplayedProducts(products.slice(0, productLimit));
+            }
+        }
+    }, [products, productLimit]);
+
     const handleLimitChange = (limit) => {
         setProductLimit(limit);
     };
 
-    
     return (
         <>
         <ProductList products={displayedProducts} />
-        <div className={styles.productBtns}>
-                <button className={styles.productBtns__btn} onClick={() => handleLimitChange(8)}>8 products</button>
-                <button className={styles.productBtns__btn} onClick={() => handleLimitChange(16)}>16 products</button>
-                <button className={styles.productBtns__btn} onClick={() => handleLimitChange(20)}>All products (or 20)</button>
+            <div className={styles.productBtns}>
+                <button className={styles.productBtns__btn} onClick={() => handleLimitChange(8)}>8</button>
+                <button className={styles.productBtns__btn} onClick={() => handleLimitChange(16)}>16</button>
+                <button className={styles.productBtns__btn} onClick={() => handleLimitChange('all')}>All products</button>
             </div>
         </>
     )

@@ -14,6 +14,13 @@ export function addProduct(product){
     }
 }
 
+export function updateProduct(product) {
+    return {
+        type: productsTypes.UPDATE_PRODUCT,
+        payload: product
+    };
+}
+
 export function deleteProduct(product) {
     return {
         type: productsTypes.DELETE_PRODUCT,
@@ -23,12 +30,10 @@ export function deleteProduct(product) {
 
 export function getProductsAsync(){
     return async function(dispatch) {
-        // const result = await fetch('./products.json');
         try {
-        // const result = await fetch(`https://api.escuelajs.co/api/v1/products/`);
-        const result = await fetch(`https://jsonplaceholder.typicode.com/posts`);
-        const data = await result.json();
-        dispatch(getProducts(data));
+            const result = await fetch(`https://jsonplaceholder.typicode.com/posts`);
+            const data = await result.json();
+            dispatch(getProducts(data));
         } catch (error) {
             console.error('Failed to fetch', error);
         }
@@ -58,6 +63,32 @@ export function addProductAsync(product) {
         }
     };
 }
+
+export function updateProductAsync(product) {
+    return async function (dispatch) {
+        try {
+            const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${product.id}`, {
+                method: 'PATCH',
+                body: JSON.stringify({
+                    title: product.title
+                }),
+                headers: {
+                    'Content-Type': 'application/json; charset=UTF-8'
+                }
+            });
+
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const updatedProduct = await response.json();
+
+            dispatch(updateProduct(updatedProduct));
+        } catch (error) {
+            console.error('Error updating product:', error);
+        }
+    };
+}
+
 
 export function deleteProductAsync(product){
     return async function (dispatch) {

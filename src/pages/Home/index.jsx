@@ -1,5 +1,8 @@
+import styles from './Home.module.scss';
+
 export default function Home(){
     return (
-        <p>home</p>
+        <div className={styles.home}>
+        </div>
     )
 }

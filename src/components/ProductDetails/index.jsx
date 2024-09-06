@@ -1,13 +1,17 @@
-export default function ProductDetails({id, title, images, price, description}) {
+import image from '../ProductCard/product-image.webp';
+import styles from './ProductDetails.module.scss';
+
+export default function ProductDetails({title, body}) {
     return (
-        <div>
-            <h1>{id}</h1>
-            <p>{title}</p>
-            <p>${price}</p>
-            {/* <p>
-                <img src={images[0]} alt="images" />
-            </p> */}
-            <p>{description}</p>
+        <div className={styles.productDetails}>
+            <div className={styles.productDetails__image}>
+                <img className={styles.productDetails__img} src={image} alt="images" />
+            </div>
+            <div className={styles.productDetails__content}>
+                <h1 className={styles.productDetails__title}>{title}</h1>
+                <p className={styles.productDetails__text}>Price: $65</p>
+                <p className={styles.productDetails__text}>{body}</p>
+            </div>
         </div>
     )
 }

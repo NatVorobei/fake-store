@@ -7,7 +7,7 @@ export default function ProductList({products, isInEditPage=false}) {
             <div className={isInEditPage ? styles.productEdit__container : styles.productList__container}>
                 {products.map(product => (
                     <div key={product.id}>
-                        <ProductCard {...product}/>
+                        <ProductCard {...product} isInEditPage={isInEditPage}/>
                     </div>
                 ))}
             </div>  

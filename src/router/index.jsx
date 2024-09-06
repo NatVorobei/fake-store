@@ -12,9 +12,7 @@ export default function Router(){
             <Route path="/" element={<MainLayout />}>
                 <Route index element={<Home />} />
                 <Route path="/products" element={<ProductsPage />} />
-                {/* <Route path="/posts" element={<ProductsPage />} /> */}
                 <Route path="/products/:id" element={<Product />} />
-                {/* <Route path="/posts/:id" element={<Product />} /> */}
                 <Route path="/add-product" element={<CreateProductForm />} />
                 <Route path="/edit" element={<EditProductPage />} />
             </Route>
