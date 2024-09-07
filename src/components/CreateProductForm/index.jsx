@@ -10,15 +10,18 @@ export default function CreateProductForm({onFormSubmit}) {
         <Formik
             initialValues={{
                 title: '',
-                body: '',
-                userId: 1,
+                price: '',
+                description: '',
+                pablished: false
             }}
             validationSchema={validationSchemaProduct}
             onSubmit={(values, { resetForm }) => {
                 const newProduct = {
                     title: values.title,
-                    body: values.description,
-                    userId: values.userId,
+                    price: parseFloat(values.price),
+                    description: values.description,
+                    pablished: values.pablished,
+                    createdAt: new Date().toISOString()
                 };
                 dispatch(addProductAsync(newProduct));
                 resetForm();
@@ -39,24 +42,33 @@ export default function CreateProductForm({onFormSubmit}) {
                         <ErrorMessage name="title" component="div" className={styles.error} />
                     </div>
                     <div className={styles.formGroup}>
-                        <label htmlFor="userId">UserId:</label>
+                        <label htmlFor="price">Price:</label>
                         <Field
-                            id="userId"
-                            name="userId"
+                            id="price"
+                            name="price"
                             type="text"
                             className={styles.input}
                         />
-                        <ErrorMessage name="userId" component="div" className={styles.error} />
+                        <ErrorMessage name="price" component="div" className={styles.error} />
                     </div>
                     <div className={styles.formGroup}>
-                        <label htmlFor="body">Description:</label>
+                        <label htmlFor="description">Description:</label>
                         <Field
-                            id="body"
-                            name="body"
+                            id="description"
+                            name="description"
                             as="textarea"
                             className={styles.textarea}
                         />
-                        <ErrorMessage name="body" component="div" className={styles.error} />
+                        <ErrorMessage name="description" component="div" className={styles.error} />
+                    </div>
+                    <div className={styles.formGroup}>
+                        <label htmlFor="published">Published:</label>
+                        <Field
+                            id="published"
+                            name="published"
+                            type="checkbox"
+                            className={styles.checkbox}
+                        />
                     </div>
                     <button type="submit" className={styles.submitButton} disabled={isSubmitting}>
                         {isSubmitting ? 'Submitting...' : 'Create Product'}

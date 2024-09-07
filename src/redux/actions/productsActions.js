@@ -31,7 +31,7 @@ export function deleteProduct(product) {
 export function getProductsAsync(){
     return async function(dispatch) {
         try {
-            const result = await fetch(`https://jsonplaceholder.typicode.com/posts`);
+            const result = await fetch('https://dummyjson.com/products');
             const data = await result.json();
             dispatch(getProducts(data));
         } catch (error) {
@@ -40,24 +40,49 @@ export function getProductsAsync(){
     }
 }
 
+// export function addProductAsync(product) {
+//     return async function(dispatch) {
+//         try {
+//             fetch('https://jsonplaceholder.typicode.com/posts', {
+//                 method: 'POST',
+//                 body: JSON.stringify({
+//                   title: 'foo',
+//                   body: 'bar',
+//                   userId: 1,
+//                 }),
+//                 headers: {
+//                   'Content-type': 'application/json; charset=UTF-8',
+//                 },
+//               })
+//                 .then((response) => response.json())
+//                 .then((json) => console.log(json));
+            
+//             dispatch(addProduct(product));
+//         } catch (error) {
+//             console.error('Error adding product:', error);
+//         }
+//     };
+// }
+
 export function addProductAsync(product) {
     return async function(dispatch) {
         try {
-            fetch('https://jsonplaceholder.typicode.com/posts', {
+            const response = await fetch('https://dummyjson.com/products/add', {
                 method: 'POST',
-                body: JSON.stringify({
-                  title: 'foo',
-                  body: 'bar',
-                  userId: 1,
-                }),
                 headers: {
-                  'Content-type': 'application/json; charset=UTF-8',
+                    'Content-Type': 'application/json'
                 },
-              })
-                .then((response) => response.json())
-                .then((json) => console.log(json));
-            
-            dispatch(addProduct(product));
+                body: JSON.stringify(product)
+            });
+
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+
+            const newProduct = await response.json();
+            console.log('Product added:', newProduct);
+
+            dispatch(addProduct(newProduct));
         } catch (error) {
             console.error('Error adding product:', error);
         }
@@ -93,7 +118,7 @@ export function updateProductAsync(product) {
 export function deleteProductAsync(product){
     return async function (dispatch) {
         try {
-        fetch('https://jsonplaceholder.typicode.com/posts/1', {
+        fetch('https://dummyjson.com/products/1', {
             method: 'DELETE',
         });
         dispatch(deleteProduct(product))

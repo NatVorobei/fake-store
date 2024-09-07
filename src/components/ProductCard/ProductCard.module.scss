@@ -8,7 +8,7 @@
     row-gap: 5px;
     border: 1px solid gainsboro;
     text-decoration: none;
-    padding: 20px;
+    padding: 15px;
     border-radius: 10px;
     &:hover {
         scale: 1.1;
@@ -44,6 +44,20 @@
         text-align: center;
     }
 
+    &__descr {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    &__readMore {
+        text-decoration: none;
+        font-weight: 600;
+        color: #292c32;
+        &:hover {
+            color:  #94969b;
+        }
+    }
+
     &__info {
         display: flex;
         align-items: center;
@@ -58,10 +72,10 @@
 
     &__btn {
         border: 1px solid transparent;
-        border-radius: 10px;
+        border-radius: 6px;
         padding: 3px 7px;
         color: white;
-        background-color: #e62235;
+        background-color: #292c32;
         font-size: 14px;
         cursor: pointer;
 

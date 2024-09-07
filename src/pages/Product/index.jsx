@@ -8,8 +8,7 @@ export default function Product() {
     const [product, setProduct] = useState(null);
 
     const productLoad = useCallback(async () => {
-        fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
-        // fetch(`https://api.escuelajs.co/api/v1/products/${id}`)
+        fetch(`https://dummyjson.com/products/${id}`)
             .then(response => response.json())
             .then(data => {      
                 setProduct(data);
