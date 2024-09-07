@@ -1,32 +1,32 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
+import { updateProductAsync } from "../../redux/actions/productsActions";
 import { useDispatch } from "react-redux";
-import { addProductAsync } from "../../redux/actions/productsActions";
-import styles from './CreateProductForm.module.scss';
-import { validationSchemaProduct } from "../../validation";
+import styles from './EditProductForm.module.scss';
 
-export default function CreateProductForm({onFormSubmit}) {
+export default function EditProductForm({product, onFormSubmit }) {
     const dispatch = useDispatch();
-    return(
+
+    return (
         <Formik
             initialValues={{
-                title: '',
-                price: '',
-                description: '',
-                published: false
+                title: product.title,
+                price: product.price,
+                description: product.description,
+                published: product.published || false
             }}
-            validationSchema={validationSchemaProduct}
+            // validationSchema={validationSchemaProduct}
             onSubmit={(values, { resetForm }) => {
-                const newProduct = {
+                const updatedProduct = {
+                    id: product.id,
                     title: values.title,
                     price: parseFloat(values.price),
                     description: values.description,
                     published: values.published,
-                    createdAt: new Date().toISOString()
                 };
-                dispatch(addProductAsync(newProduct));
+                dispatch(updateProductAsync(updatedProduct));
                 resetForm();
                 if (onFormSubmit) {
-                    onFormSubmit();
+                    onFormSubmit(); 
                 }
             }}>
             {({ isSubmitting }) => (
@@ -61,17 +61,8 @@ export default function CreateProductForm({onFormSubmit}) {
                         />
                         <ErrorMessage name="description" component="div" className={styles.error} />
                     </div>
-                    <div className={styles.formGroup}>
-                        <label htmlFor="published">Published:</label>
-                        <Field
-                            id="published"
-                            name="published"
-                            type="checkbox"
-                            className={styles.checkbox}
-                        />
-                    </div>
                     <button type="submit" className={styles.submitButton} disabled={isSubmitting}>
-                        {isSubmitting ? 'Submitting...' : 'Create Product'}
+                        {isSubmitting ? 'Submitting...' : 'Update Product'}
                     </button>
                 </Form>
                 )}

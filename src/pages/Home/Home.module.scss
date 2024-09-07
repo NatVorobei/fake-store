@@ -1,8 +1,31 @@
-.home {
-    background-image: url('./BlogImage.webp');
+.homePage {
+    position: relative;
+    background-image: url('./bgImg.png');
     background-size: cover;
     background-position: center; 
     background-repeat: no-repeat;
-    height: calc(100vh - 80px);
+    height: calc(100vh - 70px);
     overflow: hidden;
+
+    &__links {
+        position: absolute;
+        top: 30%;
+        left: 10%;
+        max-width: 1440px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 30px;
+
+        &_link {
+            color: white;
+            text-decoration: none;
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: 1px;
+
+            &:hover {
+                text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            }
+        }
+    }
 }

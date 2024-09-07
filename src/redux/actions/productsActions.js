@@ -40,30 +40,6 @@ export function getProductsAsync(){
     }
 }
 
-// export function addProductAsync(product) {
-//     return async function(dispatch) {
-//         try {
-//             fetch('https://jsonplaceholder.typicode.com/posts', {
-//                 method: 'POST',
-//                 body: JSON.stringify({
-//                   title: 'foo',
-//                   body: 'bar',
-//                   userId: 1,
-//                 }),
-//                 headers: {
-//                   'Content-type': 'application/json; charset=UTF-8',
-//                 },
-//               })
-//                 .then((response) => response.json())
-//                 .then((json) => console.log(json));
-            
-//             dispatch(addProduct(product));
-//         } catch (error) {
-//             console.error('Error adding product:', error);
-//         }
-//     };
-// }
-
 export function addProductAsync(product) {
     return async function(dispatch) {
         try {
@@ -92,10 +68,12 @@ export function addProductAsync(product) {
 export function updateProductAsync(product) {
     return async function (dispatch) {
         try {
-            const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${product.id}`, {
-                method: 'PATCH',
+            const response = await fetch('https://dummyjson.com/products/1', {
+                method: 'PUT',
                 body: JSON.stringify({
-                    title: product.title
+                    title: product.title,
+                    price: product.price,
+                    description: product.description
                 }),
                 headers: {
                     'Content-Type': 'application/json; charset=UTF-8'
@@ -106,14 +84,13 @@ export function updateProductAsync(product) {
                 throw new Error('Network response was not ok');
             }
             const updatedProduct = await response.json();
-
+            console.log('Updated product:', updatedProduct);
             dispatch(updateProduct(updatedProduct));
         } catch (error) {
             console.error('Error updating product:', error);
         }
     };
 }
-
 
 export function deleteProductAsync(product){
     return async function (dispatch) {

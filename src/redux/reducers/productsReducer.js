@@ -1,29 +1,29 @@
 import { productsTypes } from "../types/productsTypes";
 
 const initialState = {
-    products: [],
+    products: []
+    // products: JSON.parse(localStorage.getItem('products')) || [],
 }
 
 export function productsReducer(state = initialState, action) {
     switch (action.type) {
         case productsTypes.GET_PRODUCTS:
-            // let updatedProducts = action.payload.map(product => {
-            //     let a = state.products.find(item => item.id === product.id);
-            //     if(a) {
-            //         product.title = a.title
-            //     }
-            //     return product;
-            // })
             return {
                 ...state,
-                // products: updatedProducts
                 products: action.payload.products
             };
         case productsTypes.ADD_PRODUCT:
-            // add action.payload to localstorage prod array
+            // const newProductList = [...state.products, action.payload];
+            // const existingProducts = JSON.parse(localStorage.getItem('products')) || [];
+            // localStorage.setItem('products', JSON.stringify([...existingProducts, action.payload]));
+
+            // return {
+            //     ...state,
+            //     products: newProductList,
+            // };
             return {
                 ...state,
-                products: [action.payload, ...state.products],
+                products: [...state.products, action.payload]
             };
         case productsTypes.UPDATE_PRODUCT:
             return {
