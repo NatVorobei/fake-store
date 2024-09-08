@@ -56,12 +56,19 @@ export function addProductAsync(product) {
             }
 
             const newProduct = await response.json();
-            dispatch(addProduct(newProduct));
+
+            const productWithClientData = {
+                ...newProduct,
+                id: product.id,
+                published: product.published || false, 
+                createdAt: product.createdAt || new Date().toISOString() 
+            };
+
+            dispatch(addProduct(productWithClientData));
+
             const { products } = getState().products;
-            const updatedProducts = [...products, newProduct];
+            const updatedProducts = [...products, productWithClientData];
             localStorage.setItem('createdProducts', JSON.stringify(updatedProducts));
-            // const { products } = getState().products; 
-            // localStorage.setItem('createdProducts', JSON.stringify(products));
 
         } catch (error) {
             console.error('Error adding product:', error);
@@ -70,7 +77,7 @@ export function addProductAsync(product) {
 }
 
 export function updateProductAsync(product) {
-    return async function (dispatch, getState) {
+    return async function (dispatch) {
         try {
             const response = await fetch(`https://dummyjson.com/products/${product.id}`, {
                 method: 'PUT',
@@ -97,7 +104,7 @@ export function updateProductAsync(product) {
 }
 
 export function deleteProductAsync(product){
-    return async function (dispatch, getState) {
+    return async function (dispatch) {
         try {
         fetch('https://dummyjson.com/products/1', {
             method: 'DELETE',
