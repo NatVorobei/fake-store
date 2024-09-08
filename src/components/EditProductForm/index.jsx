@@ -18,7 +18,7 @@ export default function EditProductForm({product, onFormSubmit }) {
             validationSchema={validationSchemaProduct}
             onSubmit={(values, { resetForm }) => {
                 const updatedProduct = {
-                    id: product.id,
+                    ...product,
                     title: values.title,
                     price: parseFloat(values.price),
                     description: values.description,

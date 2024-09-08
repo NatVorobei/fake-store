@@ -1,28 +1,22 @@
 import { useParams } from "react-router-dom";
 import styles from './Product.module.scss';
-import { useCallback, useEffect, useState } from "react";
+import { useEffect } from "react";
 import ProductDetails from "../../components/ProductDetails";
+import { useDispatch, useSelector } from "react-redux";
+import { getSingleProductAsync } from "../../redux/actions/productsActions";
 
 export default function SingleProduct() {
     const { id } = useParams();
-    const [product, setProduct] = useState(null);
+    const dispatch = useDispatch();
+    const product = useSelector(state => state.products.singleProduct);
 
-    const productLoad = useCallback(async () => {
-        fetch(`https://dummyjson.com/products/${id}`)
-            .then(response => response.json())
-            .then(data => {      
-                setProduct(data);
-            })
-            .catch(error => console.error('Error fetching products:', error));
-    }, [id, setProduct])
-    
     useEffect(() => {
-        productLoad()
-    }, [productLoad]);
+        dispatch(getSingleProductAsync(id));
+    }, [id, dispatch]);
     
     return (
         <div className={styles.product}>
-            <ProductDetails {...product}/>
+            {product ? <ProductDetails {...product}/> : <p>Loading...</p>}
         </div>
     )
 }

@@ -1,21 +1,20 @@
 import { useEffect, useState } from "react";
 import styles from './CreatedProducts.module.scss';
+import { useSelector } from "react-redux";
 
 export default function CreatedProducts() {
-    const [filter, setFilter] = useState('all');
-    const [products, setProducts] = useState([]);
+    const createdProducts = useSelector(state => state.products.createdProducts); 
+    const [filter, setFilter] = useState(localStorage.getItem('productFilter') || 'all');
 
-    useEffect(() => {
-        const savedProducts = JSON.parse(localStorage.getItem('createdProducts')) || [];
-        const filteredProducts = savedProducts.filter(product => product.isCreated);
-        setProducts(filteredProducts);
-    }, []);
-
-    const publishedProducts = products.filter(product => {
+    const filteredProducts = createdProducts.filter(product => {
         if (filter === 'published') return product.published;
         if (filter === 'unpublished') return !product.published;
         return true;
     });
+
+    useEffect(() => {
+        localStorage.setItem('productFilter', filter); 
+    }, [filter]);
 
     return (
         <div className={styles.productTable}>
@@ -40,7 +39,7 @@ export default function CreatedProducts() {
                     </tr>
                 </thead>
                 <tbody>
-                    {publishedProducts.map(product => (
+                    {filteredProducts.map(product => (
                         <tr key={product.id}>
                             <td>{product.id}</td>
                             <td>{product.title}</td>
