@@ -4,9 +4,11 @@ import { addProductAsync } from "../../redux/actions/productsActions";
 import styles from './CreateProductForm.module.scss';
 import { validationSchemaProduct } from "../../validation";
 import { v4 as uuidv4 } from 'uuid';
+import { useState } from "react";
 
 export default function CreateProductForm({onFormSubmit}) {
     const dispatch = useDispatch();
+    const [successMessage, setSuccessMessage] = useState('');
 
     return(
         <Formik
@@ -17,7 +19,7 @@ export default function CreateProductForm({onFormSubmit}) {
                 published: false
             }}
             validationSchema={validationSchemaProduct}
-            onSubmit={(values, { resetForm }) => {
+            onSubmit={async (values, { resetForm }) => {
                 const newProduct = {
                     id: uuidv4(),
                     title: values.title,
@@ -26,10 +28,16 @@ export default function CreateProductForm({onFormSubmit}) {
                     published: values.published,
                     createdAt: new Date().toISOString()
                 };
-                dispatch(addProductAsync(newProduct));
-                resetForm();
-                if (onFormSubmit) {
-                    onFormSubmit();
+                try {
+                    await dispatch(addProductAsync(newProduct));
+                    setSuccessMessage('Product created successfully!');
+                    resetForm();
+                    if (onFormSubmit) {
+                        onFormSubmit();
+                    }
+                } catch (error) {
+                    console.error('Error creating product:', error);
+                    setSuccessMessage('Failed to create product.');
                 }
             }}>
             {({ isSubmitting, setFieldValue, values }) => (
@@ -75,6 +83,7 @@ export default function CreateProductForm({onFormSubmit}) {
                     <button type="submit" className={styles.submitButton} disabled={isSubmitting}>
                         {isSubmitting ? 'Submitting...' : 'Create Product'}
                     </button>
+                    {successMessage && <div className={styles.successMessage}>{successMessage}</div>}
                 </Form>
             )}
         </Formik>
