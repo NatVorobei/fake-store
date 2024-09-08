@@ -3,7 +3,7 @@ import styles from './Product.module.scss';
 import { useCallback, useEffect, useState } from "react";
 import ProductDetails from "../../components/ProductDetails";
 
-export default function Product() {
+export default function SingleProduct() {
     const { id } = useParams();
     const [product, setProduct] = useState(null);
 

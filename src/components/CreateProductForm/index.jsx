@@ -3,9 +3,11 @@ import { useDispatch } from "react-redux";
 import { addProductAsync } from "../../redux/actions/productsActions";
 import styles from './CreateProductForm.module.scss';
 import { validationSchemaProduct } from "../../validation";
+import { v4 as uuidv4 } from 'uuid';
 
 export default function CreateProductForm({onFormSubmit}) {
     const dispatch = useDispatch();
+
     return(
         <Formik
             initialValues={{
@@ -17,6 +19,7 @@ export default function CreateProductForm({onFormSubmit}) {
             validationSchema={validationSchemaProduct}
             onSubmit={(values, { resetForm }) => {
                 const newProduct = {
+                    id: uuidv4(),
                     title: values.title,
                     price: parseFloat(values.price),
                     description: values.description,
@@ -29,16 +32,15 @@ export default function CreateProductForm({onFormSubmit}) {
                     onFormSubmit();
                 }
             }}>
-            {({ isSubmitting }) => (
-                    <Form className={styles.form}>
+            {({ isSubmitting, setFieldValue, values }) => (
+                <Form className={styles.form}>
                     <div className={styles.formGroup}>
                         <label htmlFor="title">Title:</label>
                         <Field
                             id="title"
                             name="title"
                             type="text"
-                            className={styles.input}
-                        />
+                            className={styles.input} />
                         <ErrorMessage name="title" component="div" className={styles.error} />
                     </div>
                     <div className={styles.formGroup}>
@@ -47,8 +49,7 @@ export default function CreateProductForm({onFormSubmit}) {
                             id="price"
                             name="price"
                             type="text"
-                            className={styles.input}
-                        />
+                            className={styles.input} />
                         <ErrorMessage name="price" component="div" className={styles.error} />
                     </div>
                     <div className={styles.formGroup}>
@@ -57,8 +58,7 @@ export default function CreateProductForm({onFormSubmit}) {
                             id="description"
                             name="description"
                             as="textarea"
-                            className={styles.textarea}
-                        />
+                            className={styles.textarea} />
                         <ErrorMessage name="description" component="div" className={styles.error} />
                     </div>
                     <div className={styles.formGroup}>
@@ -68,13 +68,15 @@ export default function CreateProductForm({onFormSubmit}) {
                             name="published"
                             type="checkbox"
                             className={styles.checkbox}
-                        />
+                            checked={values.published}
+                            onChange={() => setFieldValue("published", !values.published)}
+                            />
                     </div>
                     <button type="submit" className={styles.submitButton} disabled={isSubmitting}>
                         {isSubmitting ? 'Submitting...' : 'Create Product'}
                     </button>
                 </Form>
-                )}
+            )}
         </Formik>
     )
 }

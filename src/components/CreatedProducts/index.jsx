@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react";
-import styles from './ProductTable.module.scss';
+import styles from './CreatedProducts.module.scss';
 
 export default function CreatedProducts() {
     const [filter, setFilter] = useState('all');
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        const storedProducts = JSON.parse(localStorage.getItem('products')) || [];
-        setProducts(storedProducts);
+        const savedProducts = JSON.parse(localStorage.getItem('createdProducts')) || [];
+        const filteredProducts = savedProducts.filter(product => product.isCreated);
+        setProducts(filteredProducts);
     }, []);
 
-    const filteredProducts = products.filter(product => {
+    const publishedProducts = products.filter(product => {
         if (filter === 'published') return product.published;
         if (filter === 'unpublished') return !product.published;
         return true;
@@ -35,20 +36,18 @@ export default function CreatedProducts() {
                         <th>Description</th>
                         <th>Price</th>
                         <th>Published</th>
-                        <th>Actions</th>
+                        <th>Created At</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {filteredProducts.map(product => (
+                    {publishedProducts.map(product => (
                         <tr key={product.id}>
                             <td>{product.id}</td>
                             <td>{product.title}</td>
                             <td>{product.description}</td>
                             <td>{product.price}</td>
                             <td>{product.published ? 'Yes' : 'No'}</td>
-                            <td>
-                                <button className={styles.productTable__btn}>Delete</button>
-                            </td>
+                            <td>{product.createdAt}</td>
                         </tr>
                     ))}
                 </tbody>

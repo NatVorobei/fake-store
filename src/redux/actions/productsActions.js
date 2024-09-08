@@ -10,7 +10,7 @@ export function getProducts(products){
 export function addProduct(product){
     return {
         type: productsTypes.ADD_PRODUCT,
-        payload: product
+        payload: { ...product, isCreated: true}
     }
 }
 
@@ -41,7 +41,7 @@ export function getProductsAsync(){
 }
 
 export function addProductAsync(product) {
-    return async function(dispatch) {
+    return async function(dispatch, getState) {
         try {
             const response = await fetch('https://dummyjson.com/products/add', {
                 method: 'POST',
@@ -56,9 +56,13 @@ export function addProductAsync(product) {
             }
 
             const newProduct = await response.json();
-            console.log('Product added:', newProduct);
-
             dispatch(addProduct(newProduct));
+            const { products } = getState().products;
+            const updatedProducts = [...products, newProduct];
+            localStorage.setItem('createdProducts', JSON.stringify(updatedProducts));
+            // const { products } = getState().products; 
+            // localStorage.setItem('createdProducts', JSON.stringify(products));
+
         } catch (error) {
             console.error('Error adding product:', error);
         }
@@ -66,9 +70,9 @@ export function addProductAsync(product) {
 }
 
 export function updateProductAsync(product) {
-    return async function (dispatch) {
+    return async function (dispatch, getState) {
         try {
-            const response = await fetch('https://dummyjson.com/products/1', {
+            const response = await fetch(`https://dummyjson.com/products/${product.id}`, {
                 method: 'PUT',
                 body: JSON.stringify({
                     title: product.title,
@@ -84,8 +88,8 @@ export function updateProductAsync(product) {
                 throw new Error('Network response was not ok');
             }
             const updatedProduct = await response.json();
-            console.log('Updated product:', updatedProduct);
             dispatch(updateProduct(updatedProduct));
+
         } catch (error) {
             console.error('Error updating product:', error);
         }
@@ -93,7 +97,7 @@ export function updateProductAsync(product) {
 }
 
 export function deleteProductAsync(product){
-    return async function (dispatch) {
+    return async function (dispatch, getState) {
         try {
         fetch('https://dummyjson.com/products/1', {
             method: 'DELETE',

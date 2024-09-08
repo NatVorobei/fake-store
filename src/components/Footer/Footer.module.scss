@@ -1,0 +1,30 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #292c32;
+    padding: 40px;
+    color: #b3b1b1;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 20px;
+    }
+
+    &__links{
+        font-size: 14px;
+        display: flex;
+        column-gap: 15px;
+
+        &_link {
+            color: white;
+        }
+    }
+
+    &__rights {
+        font-size: 12px;
+    }
+}

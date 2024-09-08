@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     margin-top: 20px;
+    margin-bottom: 20px;
 
     &__btn {
         border: 1px solid transparent;
@@ -20,5 +21,10 @@
         border: 1px solid #292c32;
         color: #292c32;
     }
+    }
+
+    &__title {
+        align-self: center;
+        padding-bottom: 20px;
     }
 }

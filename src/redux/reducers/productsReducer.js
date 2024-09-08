@@ -1,8 +1,9 @@
 import { productsTypes } from "../types/productsTypes";
 
 const initialState = {
-    products: []
-    // products: JSON.parse(localStorage.getItem('products')) || [],
+    // products: []
+    products: JSON.parse(localStorage.getItem('products')) || [],
+    createdProducts: JSON.parse(localStorage.getItem('createdProducts')) || []
 }
 
 export function productsReducer(state = initialState, action) {
@@ -13,17 +14,15 @@ export function productsReducer(state = initialState, action) {
                 products: action.payload.products
             };
         case productsTypes.ADD_PRODUCT:
-            // const newProductList = [...state.products, action.payload];
-            // const existingProducts = JSON.parse(localStorage.getItem('products')) || [];
-            // localStorage.setItem('products', JSON.stringify([...existingProducts, action.payload]));
+            const newProductsList = [...state.products, action.payload];
+            const newCreatedProductsList = [...state.createdProducts, action.payload];
+            localStorage.setItem('products', JSON.stringify(newProductsList));
+            localStorage.setItem('createdProducts', JSON.stringify(newCreatedProductsList));
 
-            // return {
-            //     ...state,
-            //     products: newProductList,
-            // };
             return {
                 ...state,
-                products: [...state.products, action.payload]
+                products: newProductsList,
+                createdProducts: newCreatedProductsList 
             };
         case productsTypes.UPDATE_PRODUCT:
             return {

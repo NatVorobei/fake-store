@@ -2,6 +2,7 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import { updateProductAsync } from "../../redux/actions/productsActions";
 import { useDispatch } from "react-redux";
 import styles from './EditProductForm.module.scss';
+import { validationSchemaProduct } from "../../validation";
 
 export default function EditProductForm({product, onFormSubmit }) {
     const dispatch = useDispatch();
@@ -14,7 +15,7 @@ export default function EditProductForm({product, onFormSubmit }) {
                 description: product.description,
                 published: product.published || false
             }}
-            // validationSchema={validationSchemaProduct}
+            validationSchema={validationSchemaProduct}
             onSubmit={(values, { resetForm }) => {
                 const updatedProduct = {
                     id: product.id,

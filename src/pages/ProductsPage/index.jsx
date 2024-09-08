@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { getProductsAsync } from "../../redux/actions/productsActions";
 import ProductList from "../../components/ProductList";
 import styles from './Products.module.scss';
-import CreatedProducts from "../../components/ProductTable";
+import CreatedProducts from "../../components/CreatedProducts";
+
 
 export default function ProductsPage(){
     const dispatch = useDispatch();

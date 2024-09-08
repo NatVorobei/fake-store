@@ -1,0 +1,57 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 40%;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    color: #292c32 
+}
+
+.input, .textarea, .checkbox {
+    border: 1px solid #bbb9b9;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #292c32; 
+}
+
+.textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.error {
+    color: red; 
+    font-size: 12px;
+}
+
+.submitButton {
+    background-color: #292c32; 
+    color: white; 
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: white;
+        border: 1px solid #292c32;
+        color: #292c32;
+    }
+}
+
+.checkbox {
+    align-self: start;
+    padding: 10px;
+}

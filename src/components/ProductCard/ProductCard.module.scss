@@ -70,6 +70,12 @@
         font-weight: 600;
     }
 
+    &__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
     &__btn {
         border: 1px solid transparent;
         border-radius: 6px;
@@ -92,7 +98,7 @@
     justify-content: space-between;
     align-items: center;
     font-size: 14px;
-    row-gap: 5px;
+    column-gap: 10px;
     border: 1px solid gainsboro;
     text-decoration: none;
     padding: 10px;
@@ -104,9 +110,12 @@
     }
 
     &__img {
-        width: 100px;
-        // height: 180px;
+        width: 80px;
+        height: 80px;
         object-fit: cover;
     }
 }
 
+a {
+    text-decoration: none;
+}
